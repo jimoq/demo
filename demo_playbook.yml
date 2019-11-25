@@ -6,33 +6,24 @@
 
     - name: Add or delete policy package
       cp_mgmt_package:
-        state: absent
+        state: present
         access: true
         color: blue
         comments: Policy automated through ansible and versioned in Git
         name: automation_policy
         threat_prevention: true
 
-
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
-        state: absent
-        name: Mail server
-        ip_address: 192.168.1.1
-        color: sea green
-        comments: by jim
-
-    - name: Add, set or delete Check Point host object
-      cp_mgmt_host:
-        state: absent
+        state: present
         name: Web server
-        ip_address: 10.1.1.66
-        color: yellow
+        ip_address: 10.1.1.55
+        color: red
         comments: my blue jump host object
 
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
-        state: absent
+        state: present
         name: DB server
         ip_address: 10.1.2.55
         color: blue
@@ -40,36 +31,22 @@
 
     - name: add-group, set or delete Check Point group object
       cp_mgmt_group:
-        state: absent
+        state: present
         name: Ansible control node group
         color: forest green
 
     - name: add, set, or delete Check Point access rule
       cp_mgmt_access_rule:
-        state: absent
+        state: present
         layer: automation_policy Network
         name: allow access from ansible control node
         position: 1
         source: Ansible control node group
         destination:
         - Web server
-        - Mail server
+        - DB server
         service:
         - http
-        action: Accept
-        track:
-          type: log
-
-    - name: add, set, or delete Check Point access rule
-      cp_mgmt_access_rule:
-        state: absent
-        layer: automation_policy Network
-        name: allow SMTP access from any where
-        position: 2
-        destination:
-        - mail server
-        service:
-        - smtp
         action: Accept
         track:
           type: log
