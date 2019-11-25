@@ -17,8 +17,8 @@
       cp_mgmt_host:
         state: present
         name: Web server
-        ip_address: 10.1.1.55
-        color: red
+        ip_address: 10.1.1.66
+        color: yellow
         comments: my blue jump host object
 
     - name: Add, set or delete Check Point host object
