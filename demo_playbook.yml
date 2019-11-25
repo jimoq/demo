@@ -13,6 +13,15 @@
         name: automation_policy
         threat_prevention: true
 
+
+    - name: Add, set or delete Check Point host object
+      cp_mgmt_host:
+        state: present
+        name: Mail server
+        ip_address: 192.168.1.1
+        color: sea green
+        comments: by jim
+
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
         state: present
@@ -47,6 +56,20 @@
         - DB server
         service:
         - http
+        action: Accept
+        track:
+          type: log
+
+    - name: add, set, or delete Check Point access rule
+      cp_mgmt_access_rule:
+        state: present
+        layer: automation_policy Network
+        name: allow SMTP access from any where
+        position: 2
+        destination:
+        - mail server
+        service:
+        - smtp
         action: Accept
         track:
           type: log
