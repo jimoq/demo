@@ -40,7 +40,7 @@
 
     - name: add-group, set or delete Check Point group object
       cp_mgmt_group:
-        state: absent
+        state: present
         name: Ansible control node group
         color: forest green
 
@@ -62,7 +62,7 @@
 
     - name: add, set, or delete Check Point access rule
       cp_mgmt_access_rule:
-        state: present
+        state: absent
         layer: automation_policy Network
         name: allow SMTP access from any where
         position: 2
