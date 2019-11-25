@@ -53,7 +53,7 @@
         source: Ansible control node group
         destination:
         - Web server
-        - DB server
+        - Mail server
         service:
         - http
         action: Accept
