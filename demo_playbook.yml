@@ -31,7 +31,7 @@
 
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
-        state: present
+        state: absent
         name: DB server
         ip_address: 10.1.2.55
         color: blue
