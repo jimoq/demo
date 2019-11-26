@@ -47,6 +47,8 @@
         - DB server
         service:
         - http
+        - https
+        - ssh
         action: Accept
         track:
           type: log
