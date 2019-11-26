@@ -6,7 +6,7 @@
 
     - name: Add or delete policy package
       cp_mgmt_package:
-        state: present
+        state: absent
         access: true
         color: blue
         comments: Policy automated through ansible and versioned in Git
@@ -45,7 +45,7 @@
 
     - name: add, set, or delete Check Point access rule
       cp_mgmt_access_rule:
-        state: present
+        state: absent
         layer: automation_policy Network
         name: allow access from ansible control node
         position: 1
@@ -63,7 +63,7 @@
 
     - name: add, set, or delete Check Point access rule
       cp_mgmt_access_rule:
-        state: present
+        state: absent
         layer: automation_policy Network
         name: allow SMTP access from any where
         position: 2
