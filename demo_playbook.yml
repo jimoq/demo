@@ -15,7 +15,7 @@
 
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
-        state: absent
+        state: present
         name: Mail server
         ip_address: 192.168.1.1
         color: sea green
@@ -23,7 +23,7 @@
 
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
-        state: absent
+        state: present
         name: Web server
         ip_address: 10.1.1.55
         color: red
@@ -31,7 +31,7 @@
 
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
-        state: absent
+        state: present
         name: DB server
         ip_address: 10.1.2.55
         color: blue
@@ -39,13 +39,13 @@
 
     - name: add-group, set or delete Check Point group object
       cp_mgmt_group:
-        state: absent
+        state: present
         name: Ansible control node group
         color: forest green
 
     - name: add, set, or delete Check Point access rule
       cp_mgmt_access_rule:
-        state: absent
+        state: present
         layer: automation_policy Network
         name: allow access from ansible control node
         position: 1
@@ -63,7 +63,7 @@
 
     - name: add, set, or delete Check Point access rule
       cp_mgmt_access_rule:
-        state: absent
+        state: present
         layer: automation_policy Network
         name: allow SMTP access from any where
         position: 2
