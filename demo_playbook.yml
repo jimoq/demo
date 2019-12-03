@@ -27,7 +27,7 @@
         name: Web server
         ip_address: 10.1.1.55
         color: red
-        comments: my blue jump host object
+        comments: my blue jump host object 2
 
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
