@@ -6,7 +6,7 @@
 
     - name: Add or delete policy package
       cp_mgmt_package:
-        state: absent
+        state: present
         access: true
         color: blue
         comments: Policy automated through ansible and versioned in Git
