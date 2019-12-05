@@ -19,7 +19,7 @@
         name: Mail server
         ip_address: 192.168.1.1
         color: red
-        comments: my mail server host object
+        comments: my mail server host objects
 
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
