@@ -34,7 +34,7 @@
         state: present
         name: DB server
         ip_address: 10.1.2.55
-        color: red
+        color: blue
         comments: my ubuntu host object
 
     - name: add-group, set or delete Check Point group object
