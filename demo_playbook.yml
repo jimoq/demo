@@ -18,7 +18,7 @@
         state: present
         name: Mail server
         ip_address: 192.168.1.1
-        color: sea green
+        color: red
         comments: my mail server host objects
 
     - name: Add, set or delete Check Point host object
@@ -31,7 +31,7 @@
 
     - name: Add, set or delete Check Point host object
       cp_mgmt_host:
-        state: present
+        state: absent
         name: DB server
         ip_address: 10.1.2.55
         color: red
