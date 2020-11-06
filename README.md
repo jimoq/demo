@@ -10,7 +10,7 @@ password: vpn123
 
 Add the IP of your target to your /etc/ansible/hosts inventory file and execute:
 
-```ansible-pull -d /tmp/ansible-pull -U https://github.com/jimoq/demo.git demo_playbook.yml -e "target=192.168.233.71" -l 192.168.233.71,```
+```ansible-pull -d /tmp/ansible-pull -U https://github.com/jimoq/demo.git demo_playbook.yml -e "target=192.168.233.71" -l 192.168.233.71```
 
 Or clone the repository and execute:
 
