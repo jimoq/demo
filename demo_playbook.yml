@@ -18,7 +18,7 @@
         #ansible_api_key: xxxxxxxxxx # Optionally you can use API key instead of username and password
 
 - name: Build Ansible demo policy automation_policy on Check Point management server {{ target }}
-  hosts: chkp_mgmt_srv
+  hosts: "{{ target }}"
   connection: httpapi
   gather_facts: no
   tasks:

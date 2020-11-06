@@ -4,7 +4,7 @@ Demo of policy automated through ansible and versioned in Git
 ## Run
 Execute on your ansible control node with the following command:
 
-```watch -n 5 ansible-pull -o -d /tmp/playbooks-by-ansible-pull -U https://github.com/jimoq/demo.git demo_playbook.yml -e "target=192.168.233.71"```
+```watch -n 5 ansible-pull -o -d /tmp/playbooks-by-ansible-pull -U https://github.com/jimoq/demo.git demo_playbook.yml -e "target=192.168.233.71" -l 192.168.233.71,```
 
 Or clone the repository and run
 
