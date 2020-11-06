@@ -5,11 +5,12 @@ Demo of Check Point policy automated through Ansible and versioned in Git
 Add the folllwing admin user to you test check point management server enviroment
 
 username: api_user
-password: vpn 123
 
-And execute:
+password: vpn123
 
-```ansible-pull -d /tmp/ansibel-pull -U https://github.com/jimoq/demo.git demo_playbook.yml -e "target=192.168.233.71" -i 192.168.233.71,```
+Add the IP of your target to your /etc/ansible/hosts inventory file and execute:
+
+```ansible-pull -d /tmp/ansible-pull -U https://github.com/jimoq/demo.git demo_playbook.yml -e "target=192.168.233.71" -l 192.168.233.71,```
 
 Or clone the repository and execute:
 
