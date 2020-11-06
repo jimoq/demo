@@ -3,6 +3,7 @@ Demo of Check Point policy automated through Ansible and versioned in Git
 
 ## Run
 Add the folllwing admin user to you test check point management server enviroment
+
 username: api_user
 password: vpn 123
 
