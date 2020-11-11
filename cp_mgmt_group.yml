@@ -1,0 +1,55 @@
+---
+# To Run
+# ansible-playbook cp_mgmt_group.yml -e "target=192.168.233.70" -i 192.168.233.70,
+#
+- name: Build Ansible demo policy automation_policy on Check Point management server {{ target }}
+  hosts: "{{ target }}"
+  connection: httpapi
+  vars:
+      # Credentials for cp_mgmt* modules and Settings for the Check Point httpapi plugin that provides methods to connect to Checkpoint devices over a HTTP(S)-based api.
+      ansible_httpapi_use_ssl: True
+      ansible_httpapi_validate_certs: False
+      ansible_network_os: check_point.mgmt.checkpoint #Using Galaxy https://galaxy.ansible.com/check_point collection
+      # ansible_checkpoint_domain: SMC User # Default domain for a SMS (SmartCenter), you only need to set the domain variable when connecting to a MDS
+      ansible_user: api_user # Change to your Check Point management admin user
+      ansible_ssh_pass: vpn123 # Change to your Check Point management admin password
+      #ansible_api_key: xxxxxxxxxx # Optionally you can use API key instead of username and password
+  gather_facts: no
+  tasks:
+
+    - name: Add, set or delete Check Point group object
+      check_point.mgmt.cp_mgmt_group:
+        members:
+#        - Mail server
+#        - Web server
+#        - DB server
+        state: present
+        name: Ansible Group
+        color: forest green
+
+    - name: Add, set or delete Check Point host object
+      check_point.mgmt.cp_mgmt_host:
+        state: present
+        name: Mail server
+        ip_address: 192.168.1.1
+        color: red
+        comments: my mail server host objects
+
+    - name: Add, set or delete Check Point host object
+      check_point.mgmt.cp_mgmt_host:
+        state: present
+        name: Web server
+        ip_address: 10.1.1.55
+        color: yellow
+        comments: my blue jump host object
+
+    - name: Add, set or delete Check Point host object
+      check_point.mgmt.cp_mgmt_host:
+        state: present
+        name: DB server
+        ip_address: 10.1.2.55
+        color: red
+        comments: my ubuntu host object
+
+    - name: present
+      cp_mgmt_publish:
