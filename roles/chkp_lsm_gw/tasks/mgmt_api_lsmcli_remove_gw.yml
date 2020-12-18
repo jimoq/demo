@@ -2,7 +2,7 @@
 # Removes an existing LSM robo gateway from SmartProvissioning.
 - name: List LSM gateway {{ item.name }}
   check_point.mgmt.cp_mgmt_run_script:
-    script: LSMcli {{ ansible_host }} {{ ansible_user }} {{ ansible_password }} Show -N={{ item.name }}  -F=b
+    script: LSMcli {{ mgmt_server_ip }} {{ ansible_user }} {{ ansible_password }} Show -N={{ item.name }}  -F=b
     script_name: Check if LSM gateways {{ item.name }} exists
     wait_for_task: true
     targets:
@@ -26,7 +26,7 @@
 
 - name: Remove LSM gateway {{ item.name }}
   check_point.mgmt.cp_mgmt_run_script:
-    script: LSMcli {{ ansible_host }} {{ ansible_user }} {{ ansible_password }} Remove {{ item.name }} {{ lsm_gw_id }}
+    script: LSMcli {{ mgmt_server_ip }} {{ ansible_user }} {{ ansible_password }} Remove {{ item.name }} {{ lsm_gw_id }}
     script_name: Remove LSM gateway {{ item.name }}
     targets:
     - "{{ mgmt_server_name }}"
