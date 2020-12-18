@@ -1,0 +1,11 @@
+---
+# Default vars for chkp_add_lsm_gw role
+
+# Deafult target for run-scrip api call used to execute LSMcli
+mgmt_server_name: ChangeTo_My_SMSorDMS_objectname # My Security Management Server SMS or Domain Management Sercer (DMS) objetc name in SmartConsole
+mgmt_server_ip: ChangeTo_My_SMSorDMS_IP # My Security Management Server SMS or Domain Management Sercer (DMS) IP name in SmartConsole
+
+# List of gateway objects to add
+cp_mgmt_lsm_gateway:
+- { state: present, hw: 1570/1590, name: ChangeTo_my_gw1_name, lsm_profile: ChangeTo_my_LSM_profile_name, sickey: ChangeTo_my_OTP, co_name: ChangeTo_my_COgw_noject_name }
+- { state: present, hw: 1570/1590, name: ChangeTo_my_gw2_name, lsm_profile: ChangeTo_my_LSM_profile_name, sickey: ChangeTo_my_OTP, co_name: ChangeTo_my_COgw_noject_name }

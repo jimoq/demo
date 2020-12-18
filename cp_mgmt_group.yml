@@ -20,8 +20,8 @@
     - name: Add, set or delete Check Point group object
       check_point.mgmt.cp_mgmt_group:
         members:
-#        - Mail server
-#        - Web server
+       - Mail server
+        - Web server
 #        - DB server
         state: present
         name: Ansible Group
@@ -47,9 +47,10 @@
       check_point.mgmt.cp_mgmt_host:
         state: present
         name: DB server
+        groups: Ansible Group
         ip_address: 10.1.2.55
         color: red
         comments: my ubuntu host object
 
-    - name: present
+    - name: Publish
       cp_mgmt_publish:
