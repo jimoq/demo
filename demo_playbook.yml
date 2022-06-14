@@ -99,7 +99,7 @@
           
     - name: add-set-delete-threat-profile
       cp_mgmt_threat_profile:
-        active_protections_performance_impact: Low
+        active_protections_performance_impact: low
         active_protections_severity: Low or above
         anti_bot: true
         anti_virus: true
