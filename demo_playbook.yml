@@ -5,9 +5,11 @@
 #
 # Add the IP of your target to your /etc/ansible/hosts inventory file and execute:
 # ansible-pull -d /tmp/ansible-pull -U https://github.com/jimoq/demo.git demo_playbook.yml -e "target=192.168.233.71" -l 192.168.233.71
+# where 192.168.233.71 should be changed to the IP of your management server
 #
 # Or clone the repository and execute:
 # ansible-playbook demo_playbook.yml -e "target=192.168.233.71" -i 192.168.233.71,
+# where 192.168.233.71 should be changed to the IP of your management server
 ---
 - name: Build Ansible demo policy automation_policy on Check Point management server {{ target }}
   hosts: "{{ target }}"
@@ -98,7 +100,7 @@
     - name: add-set-delete-threat-profile
       cp_mgmt_threat_profile:
         active_protections_performance_impact: low
-        active_protections_severity: low or above
+        active_protections_severity: Low or above
         anti_bot: true
         anti_virus: true
         confidence_level_high: prevent
