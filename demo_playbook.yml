@@ -109,7 +109,7 @@
         ips_settings:
           exclude_protection_with_performance_impact: true
           exclude_protection_with_performance_impact_mode: high or lower
-          newly_updated_protections: Staging
+          newly_updated_protections: staging
         name: Ansible Threat Profile
         state: present
         threat_emulation: true
