@@ -99,17 +99,17 @@
           
     - name: add-set-delete-threat-profile
       cp_mgmt_threat_profile:
-        active_protections_performance_impact: low
+        active_protections_performance_impact: Low
         active_protections_severity: Low or above
         anti_bot: true
         anti_virus: true
-        confidence_level_high: prevent
-        confidence_level_medium: prevent
+        confidence_level_high: Prevent
+        confidence_level_medium: Prevent
         ips: true
         ips_settings:
           exclude_protection_with_performance_impact: true
-          exclude_protection_with_performance_impact_mode: high or lower
-          newly_updated_protections: staging
+          exclude_protection_with_performance_impact_mode: High or lower
+          newly_updated_protections: Staging
         name: Ansible Threat Profile
         state: present
         threat_emulation: true
